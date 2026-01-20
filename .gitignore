@@ -1,0 +1,27 @@
+# IDEs et Editeurs
+.idea/
+.vscode/
+*.swp
+*.iml
+
+# Java / Maven
+target/
+*.class
+.mvn/
+mvnw
+mvnw.cmd
+
+# Frontend (Angular / React)
+node_modules/
+dist/
+.angular/
+.npm/
+
+# Docker & Base de données
+# TRÈS IMPORTANT : On ne push jamais les données réelles de la DB sur Git
+docker/mysql_data/
+
+# Logs et Système
+*.log
+.DS_Store
+Thumbs.db
