@@ -1,20 +1,17 @@
 package com.krilicar.entities;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Table;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
+@Table(name = "companies")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-public class Company {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@SuperBuilder // Changé pour SuperBuilder
+@EqualsAndHashCode(callSuper = true) // Changé pour l'héritage
+public class Company extends BaseEntity {
     private String name;
+    // Ajoute ici d'autres champs plus tard (adresse, logo, etc.)
 }

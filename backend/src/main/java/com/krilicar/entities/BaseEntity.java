@@ -8,14 +8,15 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
-@Data @NoArgsConstructor @AllArgsConstructor @SuperBuilder
+@Data @NoArgsConstructor @AllArgsConstructor
+@SuperBuilder
 public abstract class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @CreationTimestamp
-    @Column(updatable = false)
+    @Column(updatable = false) // Empêche la modification après création
     private LocalDateTime createdAt;
 
     @UpdateTimestamp

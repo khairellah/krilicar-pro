@@ -4,8 +4,9 @@ import com.krilicar.dtos.CarDTO;
 import com.krilicar.entities.Car;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.ReportingPolicy;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface CarMapper {
 
     @Mapping(source = "brand.name", target = "brandName")

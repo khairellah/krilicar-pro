@@ -13,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder // Pour utiliser le pattern builder avec l'héritage de BaseEntity
+@EqualsAndHashCode(callSuper = true)
 public class Car extends BaseEntity {
 
     @Column(unique = true, nullable = false, length = 17)
@@ -47,6 +48,7 @@ public class Car extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
+    @Builder.Default // AJOUTER CECI pour fixer le warning
     private CarAvailability availability = CarAvailability.AVAILABLE;
 
     // --- RELATIONS ---

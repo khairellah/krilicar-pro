@@ -17,7 +17,7 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        if (carRepository.count() == 0) {
+        if (carRepository.count() == 9000) {
             // 1. Créer une marque
             Brand bmw = new Brand();
             bmw.setName("BMW");
