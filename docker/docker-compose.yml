@@ -8,8 +8,8 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: krilicar_db
     volumes:
-      - mysql_data:/var/lib/mysql
+      # On lie le dossier local ./mysql_data au dossier interne de MySQL
+      - ./mysql_data:/var/lib/mysql
     restart: always
 
-volumes:
-  mysql_data:
+# Tu peux supprimer la section 'volumes:' tout en bas car elle n'est plus nécessaire
