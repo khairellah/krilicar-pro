@@ -19,7 +19,7 @@ public class BrandController {
     private final BrandService brandService;
 
     @PostMapping
-    public ResponseEntity<BrandDTO> createBrand(@RequestBody @Valid BrandDTO brandDTO) {
+    public ResponseEntity<BrandDTO> createBrand(@Valid @RequestBody  BrandDTO brandDTO) {
         return new ResponseEntity<>(brandService.saveBrand(brandDTO), HttpStatus.CREATED);
     }
 
