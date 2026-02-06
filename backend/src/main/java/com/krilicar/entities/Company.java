@@ -1,17 +1,26 @@
 package com.krilicar.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.krilicar.enums.City;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 @Entity
 @Table(name = "companies")
-@Data
-@NoArgsConstructor
-@SuperBuilder // Changé pour SuperBuilder
-@EqualsAndHashCode(callSuper = true) // Changé pour l'héritage
-public class Company extends BaseEntity {
-    private String name;
-    // Ajoute ici d'autres champs plus tard (adresse, logo, etc.)
+@PrimaryKeyJoinColumn(name = "company_id")
+@Getter @Setter
+@NoArgsConstructor @AllArgsConstructor
+@SuperBuilder
+public class Company extends AppUser {
+
+    private String landline; // Téléphone fixe
+
+    @Enumerated(EnumType.STRING)
+    private City city;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
+    @Builder.Default
+    private Boolean isBooster = false;
 }
